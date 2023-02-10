@@ -17,5 +17,6 @@ public class FirstA {
     @ApplicationModuleListener
     public void handle(SecondModuleEvent event) {
         System.out.println("i've got message!");
+        throw new IllegalStateException("something went wrong!");
     }
 }
