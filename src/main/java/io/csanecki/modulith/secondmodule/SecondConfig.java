@@ -1,21 +1,21 @@
 package io.csanecki.modulith.secondmodule;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import io.csanecki.modulith.firstmodule.FirstA;
 
 @Configuration
 public class SecondConfig {
 
-  private final FirstA firstA;
+  private final ApplicationEventPublisher publisher;
 
-  SecondConfig(FirstA firstA) {
-    this.firstA = firstA;
+  SecondConfig(ApplicationEventPublisher publisher) {
+    this.publisher = publisher;
   }
 
   @Bean
   SecondA secondA() {
-    return new SecondA(firstA);
+    return new SecondA(publisher);
   }
 
   @Bean

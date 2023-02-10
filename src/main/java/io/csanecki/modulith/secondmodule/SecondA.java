@@ -1,13 +1,13 @@
 package io.csanecki.modulith.secondmodule;
 
-import io.csanecki.modulith.firstmodule.FirstA;
+import org.springframework.context.ApplicationEventPublisher;
 
 public class SecondA {
 
-  private final FirstA firstA;
+    private final ApplicationEventPublisher publisher;
 
-  SecondA(FirstA firstA) {
-    this.firstA = firstA;
-  }
+    SecondA(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
+    }
 
 }
