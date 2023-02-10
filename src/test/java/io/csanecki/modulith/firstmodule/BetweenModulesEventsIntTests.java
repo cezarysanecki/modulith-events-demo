@@ -1,6 +1,7 @@
 package io.csanecki.modulith.firstmodule;
 
 import io.csanecki.modulith.secondmodule.SecondA;
+import io.csanecki.modulith.secondmodule.SecondModuleEvent;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.modulith.events.EventPublicationRepository;
@@ -24,6 +25,7 @@ class BetweenModulesEventsIntTests {
 
         var result = eventPublicationRepository.findIncompletePublications();
         assertThat(result).hasSize(1);
+        assertThat(result.get(0).getEvent()).isInstanceOf(SecondModuleEvent.class);
     }
 
 }
