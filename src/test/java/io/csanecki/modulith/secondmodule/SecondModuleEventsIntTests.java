@@ -18,8 +18,7 @@ class SecondModuleEventsIntTests {
     void emit_event_exactly_once(PublishedEvents events) {
         secondA.doSomething();
 
-        PublishedEvents.TypedPublishedEvents<SecondModuleEvent> secondModuleEvents = events.ofType(SecondModuleEvent.class);
-
+        var secondModuleEvents = events.ofType(SecondModuleEvent.class);
         assertThat(secondModuleEvents).hasSize(1);
     }
 
