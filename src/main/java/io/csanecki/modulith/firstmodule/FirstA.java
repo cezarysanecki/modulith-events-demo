@@ -16,6 +16,6 @@ public class FirstA {
 
     @EventListener
     public void handle(SecondModuleEvent event) {
-        System.out.println("i got message!");
+        System.out.println("i've got message!");
     }
 }
