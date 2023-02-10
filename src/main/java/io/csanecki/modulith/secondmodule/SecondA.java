@@ -10,4 +10,8 @@ public class SecondA {
         this.publisher = publisher;
     }
 
+    void doSomething() {
+        publisher.publishEvent(new SecondModuleEvent());
+    }
+
 }
